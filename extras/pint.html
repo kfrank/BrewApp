@@ -1,0 +1,113 @@
+<html>
+<head>
+	<style>
+		.pint {
+			height:416px;
+			margin:50px;
+			position:relative;
+			width:245px;
+		}
+		.pint img,
+		.pint svg {
+			left:0;
+			position:absolute;
+			top:0;
+		}
+		.pint svg {
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+	
+	<!-- IMAGE RENDERER -->
+	<div class="pint">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="render-svg"></svg>
+		<img src="pint.png" style="width:100%;" alt="" id="render-img"/>
+	</div>
+	<script>
+		
+		// Creates an averaged color from an array of hex color values.
+		function averageColor(colors) {
+			var r = [],
+				g = [],
+				b = [],
+				i;
+			
+			// Totals up all numbers in an array.
+			function sum(arry) {
+				var total = 0;
+				for (i in arry) total += arry[i];
+				return total;
+			}
+			// Creates a two-digit hexidecimal string component.
+			function hex(val) {
+				val = val.toString(16);
+				if (val.length < 2) val = '0'+val;
+				return val;
+			}
+			
+			// Collect all individual R/G/B component values.
+			for (i in colors) {
+				i = colors[i];
+				r.push( parseInt(i.substr(1, 2), 16) );
+				g.push( parseInt(i.substr(3, 2), 16) );
+				b.push( parseInt(i.substr(5, 2), 16) );
+			}
+			
+			// Get average of R/G/B components.
+			r = Math.round(sum(r) / r.length);
+			g = Math.round(sum(g) / g.length);
+			b = Math.round(sum(b) / b.length);
+			
+			// Return mean color.
+			return '#' + hex(r) + hex(g) + hex(b);
+		}
+	
+		var fill = document.createElementNS('http://www.w3.org/2000/svg', 'path'),
+			img = document.getElementById('render-img'),
+			scale = parseInt( img.style.width ) / 100,
+			colors = ['#FF0000', '#0000FF', '#c56f00'],
+			draw = 'M',
+			pts = [
+				[14, 66],
+				[44, 372],
+				[45, 385, 118, 388],
+				[193, 385, 194, 372],
+				[228, 66]
+			],
+			i, 
+			j;
+		
+		// Set image dimensions to common scale.
+		img.style.height = img.style.width;
+
+		for (i = 0; i < pts.length; i++) {
+			// Scale draw coordinates.
+			for (j in pts[i]) {
+				pts[i][j] *= scale;
+			}
+			// Assign drawing action as linear or quadratic.
+			if (i > 0) {
+				draw += pts[i].length > 2 ? ' Q' : ' L';
+			}
+			// Insert drawing coordinates.
+			draw += pts[i].join(' ');
+		}
+		draw += ' Z';
+		
+		fill.setAttribute('d', draw);
+		fill.setAttribute('style', 'fill:'+ averageColor( colors ) +';');
+		document.getElementById('render-svg').appendChild(fill);
+		fill = img = null;
+	</script>
+	
+	<!-- RENDERED IMAGE -->
+	<div class="pint">
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<path d="M7 33 L22 186 Q22.5 192.5 59 194 Q96.5 192.5 97 186 L114 33 Z" style="fill:#c56f00;"/>
+		</svg>
+		<img src="pint.png" style="width:50%;height:50%;" alt=""/>
+	</div>
+</body>
+</html>
