@@ -1,14 +1,11 @@
 $(function() {
 	
-	// GRAIN
-	var Grain = function(data) {
-		data = (data || {});
-		this.weight = ko.observable(data.weight || 3);
-		this.type = ko.observable(data.type || '');
-		this.color = ko.observable(data.color || 1.5);
-	};
-	Grain.prototype = {
-		types: [
+	var opts = {
+		styles: [
+			'Type 1',
+			'Type2'
+		],
+		grains: [
 			{ name: 'Rahr 2-row pale', color: '' },
 			{ name: 'Rahr 6-row pale', color: '' },
 			{ name: 'Briess Carapils', color: '' },
@@ -93,22 +90,8 @@ $(function() {
 			{ name: 'Weyermann® Abbey Malt', color: '' },
 			{ name: 'Breiss Blackprinz Malt', color: '' },
 			{ name: 'Briess Midnight Wheat Malt',  color: '' },
-		]
-	};
-	
-	
-	// HOPS
-	var Hops = function(data) {
-		data = (data || {});
-		this.weight = ko.observable(data.weight || '');
-		this.type = ko.observable(data.type || '');
-		this.form = ko.observable(data.form || '');
-		this.alphaAcid = ko.observable(data.alphaAcid || '');
-		this.time = ko.observable(data.time || '');
-		this.ibu = ko.observable(data.ibu || '');
-	};
-	Hops.prototype = {
-		types: [
+		],
+		hops: [
 			{ name: 'Ahtanum', alpha: '80' },
 			{ name: 'Amarillo', alpha: '11' },
 			{ name: 'Apollo', alpha: '' },
@@ -187,72 +170,83 @@ $(function() {
 			{ name: 'Warrior', alpha: '' },
 			{ name: 'Willamette', alpha: '' },
 			{ name: 'Zythos', alpha: '' }*/
-		]
-	};
-	
-	
-	// YEAST
-	var Yeast = function(data) {
-		data = (data || {});
-		this.type = ko.observable(data.type || '');
-	};
-	Yeast.prototype = {
-		types: [
+		],
+		yeasts: [
 			'Yeast 1',
 			'Yeast 2'
 		]
 	};
 	
+	// GRAIN
+	var Grain = function() {};
+	Grain.prototype = {
+		weight: 3,
+		type: opts.grains[0].name,
+		color: 1.5
+	};
 	
+	// HOPS
+	var Hops = function() {};
+	Hops.prototype = {
+		weight: '',
+		type: opts.hops[0].name,
+		form: '',
+		alphaAcid: '',
+		time: '',
+		ibu:' '
+	};
+	
+	// YEAST
+	var Yeast = function() {};
+	Yeast.prototype = {
+		type: opts.yeasts[0]
+	};
+
 	// BREW
-	var Brew = function(id, data) {
+	var Brew = function(id, saved) {
+		this.options = opts;
+		this.data = {};
+		
 		var self = this,
-			list;
-			
-		this.id = id;
-		this.brewName = ko.observable(data.brewName || '');
-		this.brewStyles = ['Type 1', 'Type2'];
-		this.brewStyle = ko.observable( data.brewStyle || this.brewStyles[0] );
-		this.batchSize = ko.observable( data.batchSize || 0 );
-		this.brewType = ko.observable( data.brewType || '' );
-		this.boilVolume = ko.observable( data.boilVolume || 1 );
+			data = this.data;
 		
-		list = data.grains ? $.map(data.grains, function(dat) { return new Grain(dat); }) : [];
-		this.grains = ko.observableArray(list);
-		
-		list = data.hops ? $.map(data.hops, function(dat) { return new Hops(dat); }) : [];
-		this.hops = ko.observableArray(list);
-		
-		list = data.yeast ? $.map(data.yeast, function(dat) { return new Yeast(dat); }) : [];
-		this.yeast = ko.observableArray(list);
+		data.id = id;
+		data.brewName = ko.observable( saved.brewName || '' );
+		data.brewStyle = ko.observable( saved.brewStyle || this.options.styles[0] );
+		data.batchSize = ko.observable( saved.batchSize || 0 );
+		data.brewType = ko.observable( saved.brewType || '' );
+		data.boilVolume = ko.observable( saved.boilVolume || 1 );
+		data.grains = ko.observableArray( saved.grains || [] );
+		data.hops = ko.observableArray( saved.hops || [] );
+		data.yeasts = ko.observableArray( saved.yeasts || [] );
 		
 		// Add
 		self.addGrain = function() {
-			self.grains.push( new Grain() );
+			data.grains.push( new Grain() );
 		};
 		self.addHops = function() {
-			self.hops.push( new Hops() );
+			data.hops.push( new Hops() );
 		};
 		self.addYeast = function() {
-			self.yeast.push( new Yeast() );
+			data.yeasts.push( new Yeast() );
 		};
 		
 		// Remove
 		self.removeGrain = function(model) {
-			self.grains.remove(model);
+			data.grains.remove(model);
 		};
 		self.removeHops = function(model) {
-			self.hops.remove(model);
+			data.hops.remove(model);
 		};
 		self.removeYeast = function(model) {
-			self.yeast.remove(model);
+			data.yeasts.remove(model);
 		};
 		
 		// Save
 		self.save = function() {
-			$('#brew-id').val( this.id );
-			$('#brew-name').val( this.brewName() );
-			$('#brew-data').val( ko.toJSON(this) );
+			$('#brew-id').val( data.id );
+			$('#brew-name').val( data.brewName() );
+			$('#brew-data').val( ko.toJSON(data) );
 			$('#brew-form').submit();
 		};
 	};
@@ -261,6 +255,5 @@ $(function() {
 	window.brewId = window.brewId || '';
 	window.brewName = window.brewName || '';
 	window.brewData = window.brewData || {};
-	
 	ko.applyBindings(new Brew( window.brewId, window.brewData ));
 });

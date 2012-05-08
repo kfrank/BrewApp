@@ -79,7 +79,6 @@ $data = '';
 <header>
 	<!--<a href="#" class="collapse">Navigation</a>-->
 	<h1><a href="#">One Two Brew</a></h1>
-
 	<a href="new-recipe.html">New Recipe</a>
 </header>
 
@@ -89,32 +88,32 @@ $data = '';
 <form class="form-horizontal" id="brew-form" action="data.php" method="post">
 	<section id="general"> 
 		<label class="hidden">Brew Name</label>
-		<input type="text" class="backless" placeholder="Brew Name" data-bind='value:brewName'/>
+		<input type="text" class="backless" placeholder="Brew Name" data-bind='value:data.brewName'/>
 		<div class="row panel">
 				<div class="control-group">
 					<label class="control-label">Style</label>
 					<div class="controls">
-						<select id="brewStyle" data-bind="options:brewStyles, value:brewStyle"></select>
+						<select id="brewStyle" data-bind="options:options.styles, value:brewStyle"></select>
 						<p class="help-block">Pick a <a href="#">BJCP</a> style for comparison.</p>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Batch Size</label>
 					<div class="controls">
-						<input type="text" data-bind="value:batchSize">
+						<input type="text" data-bind="value:data.batchSize">
 						<p class="help-block">in gallons</p>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Type</label>
 					<div class="controls">
-						<input type="text" data-bind="value:brewType">
+						<input type="text" data-bind="value:data.brewType">
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Boil Volume</label>
 					<div class="controls">
-						<input type="text" data-bind="value:boilVolume">
+						<input type="text" data-bind="value:data.boilVolume">
 						<p class="help-block">1.25 to 1.5 quarts per pound of grain.</p>
 					</div>
 				</div>
@@ -126,13 +125,13 @@ $data = '';
 
 		<button class="add" data-bind="click: addGrain">Add Grains</button>
 
-		<div class="contain" data-bind="foreach: grains">
+		<div class="contain" data-bind="foreach:data.grains">
 			<div class="panel">
 				<div class="row">
 				<div class="control-group span4">
 					<label class="control-label">Type</label>
 					<div class="controls">
-						<select data-bind="options:types, optionsText:'name', value:type"></select>
+						<select data-bind="options:$root.options.grains, optionsText:'name', optionsValue:'name', value:type"></select>
 					</div>
 				</div>
 				<div class="control-group span3">
@@ -155,13 +154,13 @@ $data = '';
 
 		<button class="add" data-bind="click:addHops">Add Hops</button>
 
-		<div class="contain" data-bind="foreach:hops">
+		<div class="contain" data-bind="foreach:data.hops">
 			<div class="panel">
 				<div class="row">
 				<div class="control-group span3">
 					<label class="control-label">Type</label>
 					<div class="controls">
-						<select id="brewStyle" data-bind="options:types, value:type" data-placeholder="Choose a Hop Variety..."></select>
+						<select id="brewStyle" data-bind="options:$root.options.hops, optionsText:'name', optionsValue:'name', value:type" data-placeholder="Choose a Hop Variety..."></select>
 					</div>
 				</div>
 				<div class="control-group span2">
@@ -195,12 +194,12 @@ $data = '';
 
 		<button class="add" data-bind="click:addYeast">Add Yeast</button>
 
-		<div class="contain" data-bind="foreach:yeast">
+		<div class="contain" data-bind="foreach:data.yeasts">
 			<div class="panel">
 				<div class="row">
 				<div class="span4">
 					<div class="control-group">
-						<select data-bind="options:types, value:type"></select>
+						<select data-bind="options:$root.options.yeasts, value:type"></select>
 					</div>
 				</div>
 				<button type="submit" class="btn span1" data-bind="click:$root.removeYeast">Remove</button>
@@ -213,15 +212,13 @@ $data = '';
 
 	<div class="actions">
 
-		<a data-bind="attr:{href:'stats.php?id='+ id}" class="pull-right btn">View</a>
+		<a data-bind="attr:{href:'stats.php?id='+ data.id}" class="pull-right btn">View</a>
+		<input type="hidden" name="id" id="brew-id">
+		<input type="hidden" name="name" id="brew-name">
+		<input type="hidden" name="style" id="brew-style">
+		<input type="hidden" name="data" id="brew-data">
+		<input type="submit" class="pull-right" data-bind="click:save" value="Save">
 
-	<input type="hidden" name="id" id="brew-id">
-	<input type="hidden" name="name" id="brew-name">
-	<input type="hidden" name="style" id="brew-style">
-	<input type="hidden" name="data" id="brew-data">
-	<input type="submit" class="pull-right" data-bind="click:save" value="Save">
-
-	
 	</div>
 	
 </form>
