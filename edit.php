@@ -63,7 +63,7 @@ $data = '';
 
 <body>
 
-<h1 class="skip"><a href="#">One Two Brew</a></h1>
+<h1 class="skip"><a href="index.php">One Two Brew</a></h1>
 <a href="#content" class="skip">Skip to Content</a>
 
 <!--<nav>
@@ -78,8 +78,8 @@ $data = '';
 <div class="main">
 <header>
 	<!--<a href="#" class="collapse">Navigation</a>-->
-	<h1><a href="#">One Two Brew</a></h1>
-	<a href="new-recipe.html">New Recipe</a>
+	<h1><a href="index.php">One Two Brew</a></h1>
+	<a href="index.php">New Recipe</a>
 </header>
 
 <section id="content" class="clearfix">
@@ -209,34 +209,26 @@ $data = '';
 
 		
 	</section><!-- /yeast -->
-
-	<div class="actions">
-
-		<a data-bind="attr:{href:'stats.php?id='+ data.id}" class="pull-right btn">View</a>
-		<input type="hidden" name="id" id="brew-id">
-		<input type="hidden" name="name" id="brew-name">
-		<input type="hidden" name="style" id="brew-style">
-		<input type="hidden" name="data" id="brew-data">
-		<input type="submit" class="pull-right" data-bind="click:save" value="Save">
-
-	</div>
+	<input type="hidden" name="id" id="brew-id">
+	<input type="hidden" name="name" id="brew-name">
+	<input type="hidden" name="style" id="brew-style">
+	<input type="hidden" name="data" id="brew-data">
+	
+	<ul class="actions">
+		<li><a href="index.php">Cancel</a></li>
+		<li><a data-bind="click:save">Save</a></li>
+	</ul>
 	
 </form>
-
 </div>
 </section>
 
-<footer>
-</footer>
 </div>
 
 <!-- the other fun stuff! -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script src="_/js/knockout-2.0.0.js"></script>
     <script src="_/js/brew.js"></script>
-
-    <script src="_/js/chosen.jquery.js" type="text/javascript"></script>
-  <script type="text/javascript"> $(".chzn-select").chosen(); $(".chzn-select-deselect").chosen({allow_single_deselect:true}); </script>
 </body>
 
 </html>

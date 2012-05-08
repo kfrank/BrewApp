@@ -243,6 +243,10 @@ $(function() {
 		};
 		
 		// Save
+		self.done = function() {
+			$('#brew-next').val('view.php');
+			self.save();
+		};
 		self.save = function() {
 			$('#brew-id').val( data.id );
 			$('#brew-name').val( data.brewName() );

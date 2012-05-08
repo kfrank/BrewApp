@@ -88,13 +88,11 @@ mysql_select_db(brews);
 <header>
 	<!--<a href="#" class="collapse">Navigation</a>-->
 	<h1><a href="#">One Two Brew</a></h1>
-
-	<a href="recipe.php">New Recipe</a>
 </header>
 
 <section id="content" class="clearfix">
 <div class="container">
-	<a class="brew new" href="recipe.php">
+	<a class="brew new" href="edit.php">
 		<figure>
 			<img src="_/img/beers/new.jpg" alt="brew name">
 		</figure>
@@ -105,17 +103,17 @@ mysql_select_db(brews);
 	</a><!-- /new brew -->
 	
 <!-- // template for saved brews -->
-	<div data-bind="foreach:brews">
-	<a class="brew" data-bind="attr:{href:'recipe.php?id='+ id}">
-		<figure>
-			<img src="_/img/beers/a-cold-day-in-helles.jpg" alt="A Cold Day in Helles">
-		</figure>
-		<figcaption>
-			<h2 data-bind="text:name">A Cold Day in Helles</h2>
-			<h3>A Beer That Needs More Data</h3>
-		</figcaption>
-	</a><!-- /new brew -->
-	</div>
+	<ul class="brew-list" data-bind="foreach:brews">
+		<li class="brew">
+			<figure>
+				<img src="_/img/beers/a-cold-day-in-helles.jpg" alt="A Cold Day in Helles">
+			</figure>
+			<figcaption>
+				<h2 data-bind="text:name">Name</h2>
+				<p><a data-bind="attr:{href:'edit.php?id='+ id}">Edit</a> | <a data-bind="attr:{href:'view.php?id='+ id}">View</a></p>
+			</figcaption>
+		</li><!-- /new brew -->
+	</ul>
 </div>
 </section>
 

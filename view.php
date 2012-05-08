@@ -77,7 +77,7 @@ $data = '';
 
 <body>
 
-<h1 class="skip"><a href="#">One Two Brew</a></h1>
+<h1 class="skip"><a href="index.php">One Two Brew</a></h1>
 <a href="#content" class="skip">Skip to Content</a>
 
 <!--<nav>
@@ -92,35 +92,34 @@ $data = '';
 <div class="main">
 <header>
 	<!--<a href="#" class="collapse">Navigation</a>-->
-	<h1><a href="#">One Two Brew</a></h1>
-
-	<a href="new-recipe.html">New Recipe</a>
+	<h1><a href="index.php">One Two Brew</a></h1>
+	<a href="index.php">New Recipe</a>
 </header>
 
 <section id="content" class="clearfix">
 <div class="container">
 <form class="form-horizontal">
 	<section id="general">
-		<h1 data-bind="text:brewName"></h1>
-		<h2 data-bind="text:brewStyle"></h2>
+		<h1 data-bind="text:data.brewName"></h1>
+		<h2 data-bind="text:data.brewStyle"></h2>
 		<div class="row panel">
 				<div class="control-group">
 					<label class="control-label">Batch Size</label>
 					<div class="controls">
-						<span data-bind="text:batchSize"></span> gallons
+						<span data-bind="text:data.batchSize"></span> gallons
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Boil Volume</label>
 					<div class="controls">
-						<span data-bind="text:boilVolume"></span> gallons
+						<span data-bind="text:data.boilVolume"></span> gallons
 					</div>
 				</div>
 		</div><!-- /panel -->
 	</section><!-- /general -->
 	
 	<section id="grains" >
-		<div class="contain" data-bind="foreach: grains">
+		<div class="contain" data-bind="foreach:data.grains">
 			<div class="row panel">
 				<div class="control-group">
 					<div class="controls">
@@ -152,7 +151,7 @@ $data = '';
 	
 	<section id="hops">
 		<div class="contain">
-			<div class="row panel" data-bind="foreach:hops">
+			<div class="row panel" data-bind="foreach:data.hops">
 				<div class="control-group">
 					<label class="control-label">Type</label>
 					<div class="controls">
@@ -181,7 +180,7 @@ $data = '';
 	</section><!-- /hops -->
 	
 	<section id="yeast">
-		<div class="contain" data-bind="foreach:yeast">
+		<div class="contain" data-bind="foreach:data.yeasts">
 		<div class="row panel">
 			<div class="control-group">
 				<span data-bind="text:type"></span>
@@ -190,134 +189,15 @@ $data = '';
 		</div>
 	</section><!-- /yeast -->
 	
-	<!--<section id="adjuncts">
-		<button class="add" id="addAdjuncts">Add Adjuncts</button>
-		<div class="contain">
-		
-		</div>
-	</section> /yeast -->
-
-	<button class="btn" id="save">Save</button>
-	<button class="btn" id="load">Brew</button>
+	<ul class="actions">
+		<li><a href="edit.php?id=<?php echo $id; ?>">Edit</a></li>
+		<li><a href="index.php">Done</a></li>
+	</ul>
 </form>
 </div>
 </section>
 
-<footer>
-</footer>
 </div>
-
-<script id="UI-grains" type="text/template">
-<div class="row panel">
-		<div class="control-group">
-			<label class="control-label">Type</label>
-			<div class="controls">
-				Vienna Malt
-			</div>
-		</div>
-		<!--<div class="control-group">
-			<label class="control-label">Time</label>
-			<div class="controls">
-				<input type="text" value="${type}">
-				<p class="help-block">in minutes</p>
-			</div>
-		</div>-->
-		<div class="control-group">
-			<label class="control-label">Weight</label>
-			<div class="controls">
-				6 lbs
-			</div>
-		</div>
-		<!--<div class="control-group">
-			<label class="control-label">Color</label>
-			<div class="controls">
-				<input type="text" value="${color}">
-			</div>
-		</div>-->
-</div><!-- /panel -->
-</script>
-
-<script id="UI-hops" type="text/template">
-<div class="row panel" data-id="${id}">
-	<div class="control-group">
-		<label class="control-label">Type</label>
-		<div class="controls">
-			Amarillo
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label">Time</label>
-		<div class="controls">
-			30 min
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label">Weight</label>
-		<div class="controls">
-			1 oz
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label">Form</label>
-		<div class="controls">
-			Pellet
-		</div>
-	</div>
-	<!--<div class="control-group">
-		<label class="control-label">Alpha</label>
-		<div class="controls">
-			<input type="text" value="${alpha}" class="hopAlpha">
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label">IBU</label>
-		<div class="controls">
-			<input type="text" value="${ibu}" class="hopIBU">
-		</div>
-	</div>-->
-</div><!-- /panel -->
-
-</script>
-
-<script id="UI-yeast" type="text/template">
-	<div class="row panel">
-		<div class="span12">
-			<div class="control-group">
-				<select value="${type}">
-					<option>Type</option>
-				</select>
-			</div>
-		</div>
-	</div><!-- /panel -->
-</script>
-
-<!--<script id="UI-adjunct" type="text/template">
-	<div class="row panel">
-		<div class="span12">
-			<div class="control-group">
-				<select value="${type}">
-					<option>Type</option>
-				</select>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Form</label>
-				<div class="controls">
-					<input type="text" value="${form}">
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Phase</label>
-				<div class="controls">
-					<input type="text" value="${phase}">
-				</div>
-			</div>
-		</div>
-	</div>
-	<button type="submit" class="btn">Remove</button>
-</script>-->
-
-
-<!-- the other fun stuff! -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script src="_/js/knockout-2.0.0.js"></script>
     <script src="_/js/brew.js"></script>

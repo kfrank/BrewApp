@@ -32,5 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] == GET) {
 	}
 }
 
-header("Location: recipe.php?id=$id");
+header("Location: view.php?id=$id");
 ?>
