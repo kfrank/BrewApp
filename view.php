@@ -105,16 +105,20 @@ $data = '';
 		<h2 data-bind="text:data.brewStyle"></h2>
 		<div class="row panel">
 				<div class="control-group">
-					<label class="control-label">Batch Size</label>
-					<div class="controls">
-						<span data-bind="text:data.batchSize"></span> gallons
-					</div>
+					<h2>Batch Size</h2>
+					<h3><span data-bind="text:data.batchSize"></span> gallons</h3>
 				</div>
 				<div class="control-group">
-					<label class="control-label">Boil Volume</label>
-					<div class="controls">
+					<h2>Boil Volume</h2>
+					<h3>
 						<span data-bind="text:data.boilVolume"></span> gallons
-					</div>
+					</h3>
+				</div>
+				<div class="control-group">
+					<h2>IBU</h2>
+				</div>
+				<div class="control-group">
+					<h2>ABV</h2>
 				</div>
 		</div><!-- /panel -->
 	</section><!-- /general -->
@@ -157,30 +161,32 @@ $data = '';
 	<section id="hops">
 		<h2>Hops</h2>
 		<div class="contain">
-			<div class="row panel" data-bind="foreach:data.hops">
+			<div data-bind="foreach:data.hops">
+				<div class="panel">
 				<div class="control-group">
-					<label class="control-label">Type</label>
-					<div class="controls">
+					<h2>Type</h2>
+					<h3 class="controls">
 						<span data-bind="text:type"></span>
-					</div>
+					</h3>
 				</div>
 				<div class="control-group">
-					<label class="control-label">Time</label>
-					<div class="controls">
+					<h2>Time</h2>
+					<h3>
 						<span data-bind="text:time"></span> minutes
-					</div>
+					</h3>
 				</div>
 				<div class="control-group">
-					<div class="controls">
+					<h3>
 						<span data-bind="text:weight"></span> oz
-					</div>
+					</h3>
 				</div>
 				<div class="control-group">
-					<label class="control-label">Form</label>
-					<div class="controls">
+					<h2>Form</h2>
+					<h3>
 						<span data-bind="text:form"></span>
-					</div>
+					</h3>
 				</div>
+			</div>
 			</div><!-- /panel -->
 		</div>
 	</section><!-- /hops -->
