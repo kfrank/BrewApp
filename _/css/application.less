@@ -10,6 +10,8 @@
   }
 }
 
+.pull-left { float: left; }
+
 body {
   background: url(../img/dark-bg.png);
   background-attachment: fixed;
@@ -234,7 +236,7 @@ ul.brew-list {
   }
 }
 
-.panel {
+.panel, .contain table {
   margin: 0 0 20px;
   padding: 0 10px;
   background: lighten(#373D4C, 10%); 
@@ -242,6 +244,27 @@ ul.brew-list {
   color: #FFFAE1;
   font-weight: 200;
 }
+.contain table {
+  padding: 0;
+
+  th, td {
+    padding: 7px 20px;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  tr {
+
+    &:nth-child(odd) {
+      background: lighten(#373D4C, 20%); 
+    }
+  }
+
+  thead tr:nth-child(odd) {
+      background: transparent;
+  }
+}
+
 .help-block {
   font-size: 0.875em;
   font-style: italic;

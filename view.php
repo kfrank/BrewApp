@@ -101,26 +101,26 @@ $data = '';
 <div class="container">
 <form class="form-horizontal">
 	<section id="general">
-		<h1 data-bind="text:data.brewName"></h1>
-		<h2 data-bind="text:data.brewStyle"></h2>
-		<div class="row panel">
-				<div class="control-group">
-					<h2>Batch Size</h2>
-					<h3><span data-bind="text:data.batchSize"></span> gallons</h3>
-				</div>
-				<div class="control-group">
-					<h2>Boil Volume</h2>
-					<h3>
-						<span data-bind="text:data.boilVolume"></span> gallons
-					</h3>
-				</div>
-				<div class="control-group">
+			<h1 data-bind="text:data.brewName"></h1>
+			<h2 data-bind="text:data.brewStyle"></h2>
+		<div class="panel">
+			<div class="control-group">
+				<h2>Batch Size</h2>
+				<h3><span data-bind="text:data.batchSize"></span> gallons</h3>
+			</div>
+			<div class="control-group">
+				<h2>Boil Volume</h2>
+				<h3>
+					<span data-bind="text:data.boilVolume"></span> gallons
+				</h3>
+			</div>
+		</div>
+				<!--<div class="control-group">
 					<h2>IBU</h2>
 				</div>
 				<div class="control-group">
 					<h2>ABV</h2>
-				</div>
-		</div><!-- /panel -->
+				</div>-->
 	</section><!-- /general -->
 	
 	<section id="grains" >
@@ -161,36 +161,27 @@ $data = '';
 	<section id="hops">
 		<h2>Hops</h2>
 		<div class="contain">
-			<div data-bind="foreach:data.hops">
-				<div class="panel">
-				<div class="control-group">
-					<h2>Type</h2>
-					<h3 class="controls">
-						<span data-bind="text:type"></span>
-					</h3>
-				</div>
-				<div class="control-group">
-					<h2>Time</h2>
-					<h3>
-						<span data-bind="text:time"></span> minutes
-					</h3>
-				</div>
-				<div class="control-group">
-					<h3>
-						<span data-bind="text:weight"></span> oz
-					</h3>
-				</div>
-				<div class="control-group">
-					<h2>Form</h2>
-					<h3>
-						<span data-bind="text:form"></span>
-					</h3>
-				</div>
-			</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Type</th>
+							<th>Time</th>
+							<th>Weight</th>
+							<th>Form</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach:data.hops">
+						<tr>
+							<td><span data-bind="text:type"></span></td>
+							<td><span data-bind="text:time"></span> minutes</td>
+							<td><span data-bind="text:weight"></span> oz</td>
+							<td><span data-bind="text:form"></span></td>
+						</tr>
+					</tbody>
+				</table>
 			</div><!-- /panel -->
-		</div>
 	</section><!-- /hops -->
-	
+
 	<section id="yeast">
 		<h2>Yeast</h2>
 		<div class="contain" data-bind="foreach:data.yeasts">
