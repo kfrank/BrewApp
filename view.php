@@ -76,7 +76,7 @@ $data = '';
 	<script type="text/javascript" src="_/js/d3.v2.js"></script>
 </head>
 
-<body>
+<body class="view">
 
 <h1 class="skip"><a href="index.php">One Two Brew</a></h1>
 <a href="#content" class="skip">Skip to Content</a>
@@ -136,6 +136,7 @@ $data = '';
 			var svg = d3.select("section#grains").append("svg:svg")
 			    .attr("width", w)
 			    .attr("height", h)
+			    .attr('class', 'grainsdonut')
 			  .append("svg:g")
 			    .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
@@ -147,18 +148,8 @@ $data = '';
 
     	</script>
 		<div class="contain" data-bind="foreach:data.grains">
-			<div class="row">
-				<div class="control-group">
-					<div class="controls">
-						<span data-bind="text:type"></span>
-					</div>
-				</div>
-				<div class="control-group">
-					<div class="controls">
-						<span data-bind="text:weight"></span> lbs
-					</div>
-				</div>
-			</div><!-- /panel -->
+				<h2><span data-bind="text:type"></span></h2>
+				<h3><span data-bind="text:weight"></span> lbs</h3>
 		</div>
 		
 	</section><!-- /grains -->
