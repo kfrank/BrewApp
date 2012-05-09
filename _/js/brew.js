@@ -384,5 +384,6 @@ $(function() {
 	window.brewId = window.brewId || '';
 	window.brewName = window.brewName || '';
 	window.brewData = window.brewData || {};
-	ko.applyBindings(new Brew( window.brewId, window.brewData ));
+	window.brew = new Brew( window.brewId, window.brewData );
+	ko.applyBindings(window.brew);
 });

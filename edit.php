@@ -177,7 +177,7 @@ $data = '';
 				<div class="control-group">
 					<label class="control-label">Form</label>
 					<div class="controls">
-						<input type="text" data-bind="value:form">
+						<select data-bind="options:$root.options.forms, value:form"></select>
 					</div>
 				</div>
 				<button type="submit" class="btn remove" data-bind="click:$root.removeHops">Remove</button>
