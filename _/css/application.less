@@ -1,4 +1,4 @@
- .clearfix, section { 
+ .clearfix, section, header, .panel { 
 
   &:before, &:after {
   	content:"";
@@ -61,6 +61,7 @@ body {
   zoom:1;
   position: fixed;
   width: 100%;
+  height: 52px;
 
   .clearfix;
 
@@ -233,7 +234,7 @@ ul.brew-list {
 
 .panel {
   margin: 0 20px 20px;
-  padding: 20px;
+  padding: 0 10px;
   background: lighten(#373D4C, 10%); 
   border-radius: 4px;
   color: #FFFAE1;
@@ -250,14 +251,31 @@ ul.brew-list {
 
 section #general, section #grains, section #hops, section #yeast {
   margin: 0 20px;
+
+  h2 {
+    margin-left: 20px;
+  }
 }
 
-input {
-  padding: 4px;
+input, select {
+  padding: 6px;
   border-radius: 4px;
-  border: 1px solid rgba(0,0,0,1);
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.25);
+  background: #363b4c;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.05);
+  border: none;
+  font-size: 1em;
+  color: rgba(246,250,225,0.5);
+  -webkit-appearance: none;
+
+  &:focus {
+    background: #FFFAE1;
+    outline: 0;
+    color: #333;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  }
 }
+
+label {color: transparent; font: 0.1em/0 sans-serif;}
 
 .form-horizontal {
   h2 {
@@ -269,7 +287,7 @@ input {
 
 .pull-right {float:right;}
 
-.add {
+.add, .remove {
   background: rgba(255,250,225,0.1) url(../img/new.png) no-repeat center;
   border: 2px solid #1d2028;
   display:inline-block;
@@ -290,9 +308,18 @@ input {
   }
 }
 
+.remove {
+  background: rgba(0,0,0,0.25) url(../img/delete.png) no-repeat center;
+  margin: 20px 0 0;
+  height:30px;
+
+  &:hover {
+    background: rgba(255,250,225,0.2) url(../img/delete.png) no-repeat center;
+  }
+}
+
 .contain {
   float: left;
-  width: 92%;
 }
 
 ul.actions {
@@ -312,4 +339,29 @@ ul.actions {
 			padding:3px 10px;
 		}
 	}
+}
+
+input.backless {
+  margin: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #FFFAE1;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 1.5em;
+  color: #FFFAE1;
+
+  &:focus {
+    background: #4C556A;
+    border-radius: 4px 4px 0 0;
+    outline: 0;
+  }
+}
+.control-group {
+  float: left;
+  margin-right: 10px;
+}
+.help-block {
+  margin-left: 5px;
+  color: rgba(255, 250, 225, 0.5);
 }

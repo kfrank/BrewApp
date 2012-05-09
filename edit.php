@@ -88,7 +88,7 @@ $data = '';
 <form class="form-horizontal" id="brew-form" action="data.php" method="post">
 	<section id="general"> 
 		<label class="hidden">Brew Name</label>
-		<input type="text" class="backless" placeholder="Brew Name" data-bind='value:data.brewName'/>
+		<input type="text" class="backless" data-bind='value:data.brewName'/>
 		<div class="row panel">
 				<div class="control-group">
 					<label class="control-label">Style</label>
@@ -101,13 +101,13 @@ $data = '';
 					<label class="control-label">Batch Size</label>
 					<div class="controls">
 						<input type="text" data-bind="value:data.batchSize">
-						<p class="help-block">in gallons</p>
+						<p class="help-block">gallons</p>
 					</div>
 				</div>
 				<div class="control-group">
 					<label class="control-label">Type</label>
 					<div class="controls">
-						<input type="text" data-bind="value:data.brewType">
+						<select data-bind="options:options.types, value:data.brewType"></select>
 					</div>
 				</div>
 				<div class="control-group">
@@ -127,22 +127,20 @@ $data = '';
 
 		<div class="contain" data-bind="foreach:data.grains">
 			<div class="panel">
-				<div class="row">
-				<div class="control-group span4">
+				<div class="control-group">
 					<label class="control-label">Type</label>
 					<div class="controls">
 						<select data-bind="options:$root.options.grains, optionsText:'name', optionsValue:'name', value:type"></select>
 					</div>
 				</div>
-				<div class="control-group span3">
+				<div class="control-group">
 					<label class="control-label">Weight</label>
 					<div class="controls">
 						<input type="text" data-bind="value:weight">
-						<p class="help-block">in pounds</p>
+						<p class="help-block">pounds</p>
 					</div>
 				</div>
-				<button class="btn span1" data-bind="click:$root.removeGrain">Remove</button>
-				</div>
+				<button class="btn remove" data-bind="click:$root.removeGrain">Remove</button>
 			</div>
 		</div>
 
@@ -156,33 +154,33 @@ $data = '';
 
 		<div class="contain" data-bind="foreach:data.hops">
 			<div class="panel">
-				<div class="row">
-				<div class="control-group span3">
+				<div class="control-group">
 					<label class="control-label">Type</label>
 					<div class="controls">
 						<select id="brewStyle" data-bind="options:$root.options.hops, optionsText:'name', optionsValue:'name', value:type" data-placeholder="Choose a Hop Variety..."></select>
 					</div>
 				</div>
-				<div class="control-group span2">
+				<div class="control-group">
 					<label class="control-label">Time</label>
 					<div class="controls">
 						<input type="text" data-bind="value:time">
+						<p class="help-block">minutes</p>
 					</div>
 				</div>
-				<div class="control-group span2">
+				<div class="control-group">
 					<label class="control-label">Weight</label>
 					<div class="controls">
 						<input type="text" data-bind="value:weight">
+						<p class="help-block">ounces</p>
 					</div>
 				</div>
-				<div class="control-group span2">
+				<div class="control-group">
 					<label class="control-label">Form</label>
 					<div class="controls">
 						<input type="text" data-bind="value:form">
 					</div>
 				</div>
-				<button type="submit" class="btn removeBtn span1" data-bind="click:$root.removeHops">Remove</button>
-				</div>
+				<button type="submit" class="btn remove" data-bind="click:$root.removeHops">Remove</button>
 			</div>
 		</div>
 
@@ -196,14 +194,13 @@ $data = '';
 
 		<div class="contain" data-bind="foreach:data.yeasts">
 			<div class="panel">
-				<div class="row">
-				<div class="span4">
-					<div class="control-group">
+				<div class="control-group">
+					<label class="control-label">Yeast Type</label>
+					<div class="controls">
 						<select data-bind="options:$root.options.yeasts, value:type"></select>
 					</div>
 				</div>
-				<button type="submit" class="btn span1" data-bind="click:$root.removeYeast">Remove</button>
-				</div>
+				<button type="submit" class="btn remove" data-bind="click:$root.removeYeast">Remove</button>
 			</div>
 		</div>
 
@@ -226,7 +223,7 @@ $data = '';
 </div>
 
 <!-- the other fun stuff! -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="_/js/jquery-1.6.2.js"></script>
 	<script src="_/js/knockout-2.0.0.js"></script>
     <script src="_/js/brew.js"></script>
 </body>
