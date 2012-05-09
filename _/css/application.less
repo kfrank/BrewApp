@@ -246,17 +246,19 @@ ul.brew-list {
 }
 .contain table {
   padding: 0;
+  border-collapse:collapse;
+  border-spacing: 0;
 
   th, td {
-    padding: 7px 20px;
-    border-spacing: 0;
-    border-collapse: collapse;
+    padding: 12px 18px;
+    
+    border: 0;
+    text-align: left;
   }
 
   tr {
-
     &:nth-child(odd) {
-      background: lighten(#373D4C, 20%); 
+      background: lighten(#373D4C, 15%); 
     }
   }
 
@@ -434,4 +436,18 @@ input.backless {
 
 .view {
   .grainsdonut, #grains .contain { float: left;}
+}
+
+
+@media screen and (min-width: 1px) and (max-width:400px) {
+  select {max-width: 320px;}
+
+  .contain table tr, .contain table th {
+    padding: 7px 15px;
+  }
+}
+@media screen and (max-width:860px) {
+  .control-group {
+    float:none;
+  }
 }

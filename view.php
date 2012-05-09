@@ -186,9 +186,9 @@ $data = '';
 		<h2>Yeast</h2>
 		<div class="contain" data-bind="foreach:data.yeasts">
 		<div class="row panel">
-			<div class="control-group">
+			<h2>
 				<span data-bind="text:type"></span>
-			</div>
+			</h2>
 	</div><!-- /panel -->
 		</div>
 	</section><!-- /yeast -->
