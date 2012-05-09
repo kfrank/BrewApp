@@ -209,6 +209,7 @@ $data = '';
 	<input type="hidden" name="id" id="brew-id">
 	<input type="hidden" name="name" id="brew-name">
 	<input type="hidden" name="style" id="brew-style">
+	<input type="hidden" name="color" id="brew-color" value="#FF0000">
 	<input type="hidden" name="data" id="brew-data">
 	
 	<ul class="actions">

@@ -19,15 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] == GET) {
 	
 	$id = $_POST['id'];
 	$name = $_POST['name'];
+	$color = $_POST['color'];
 	$data = $_POST['data'];
 	
 	if ($_POST['id'] != '') {
 		// HAS ID. Update Record.
-		$result = mysql_query("UPDATE brew SET name='$name',data='$data' WHERE id=$id");
+		$result = mysql_query("UPDATE brew SET name='$name',color='$color',data='$data' WHERE id=$id");
 		
 	} else {
 		// NO ID. Create Record.
-		$result = mysql_query("INSERT INTO brew (name, data) VALUES ('$name', '$data')");
+		$result = mysql_query("INSERT INTO brew (name, color, data) VALUES ('$name', '$color', '$data')");
 		$id = mysql_insert_id();
 	}
 }
