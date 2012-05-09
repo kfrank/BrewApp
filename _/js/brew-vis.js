@@ -22,6 +22,7 @@ $(function() {
 		
 		chart = new Highcharts.Chart({
 		    chart: {
+				animation: false,
 		        renderTo: 'grains-chart',
 				backgroundColor: null,
 		        plotBackgroundColor: null,
@@ -31,16 +32,20 @@ $(function() {
 			credits: {
 				enabled: false
 			},
+			legend: {
+				enabled: false
+			},
 		    title: {
 		        text: ''
 		    },
 		    tooltip: {
 		        formatter: function () {
-		            return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %';
+		            return '<b>' + this.point.name + '</b>: ' + Math.round(this.percentage*100)/100 + ' %';
 		        }
 		    },
 		    plotOptions: {
 		        pie: {
+					animation: false,
 		            allowPointSelect: false,
 					showInLegend: true,
 		            cursor: 'pointer',
