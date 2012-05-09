@@ -62,6 +62,7 @@ mysql_select_db(brews);
 			$ele = array();
 			$ele['id'] = $item['id'];
 			$ele['name'] = $item['name'];
+			$ele['color'] = $item['color'];
 			$rows[] = $ele;
 		}
 
@@ -107,7 +108,7 @@ mysql_select_db(brews);
 		<li class="brew">
 			<figure>
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-					<path d="M3 12 L8 70 Q8 72 22 73 Q36 72 36 70 L43 12 Z" style="fill:#972555;"></path>
+					<path d="M3 12 L8 70 Q8 72 22 73 Q36 72 36 70 L43 12 Z" data-bind="attr:{style:'fill:'+color}"></path>
 				</svg>
 				<img src="_/img/beer-home.png">
 			</figure>
