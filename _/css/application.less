@@ -1,4 +1,4 @@
- .clearfix, section, header, .panel { 
+ .clearfix, section, header, .panel, .view .full { 
 
   &:before, &:after {
   	content:"";
@@ -66,6 +66,7 @@ h3 {font-size: 1em;margin:0 0 2em;}
   position: fixed;
   width: 100%;
   height: 52px;
+  z-index: 1000;
 
   .clearfix;
 
@@ -168,7 +169,7 @@ ul.brew-list {
 	padding:0;
 }
 
-.brew {
+.brew, .views #general {
   -webkit-transition: all 0.1s ease;
      -moz-transition: all 0.1s ease;
        -o-transition: all 0.1s ease;
@@ -434,10 +435,10 @@ input.backless {
   color: rgba(255, 250, 225, 0.5);
 }
 
-.view {
-  .grainsdonut, #grains .contain { float: left;}
+.view .half {
+  float: left;
+  width: 50%;
 }
-
 
 @media screen and (min-width: 1px) and (max-width:400px) {
   select {max-width: 320px;}
@@ -447,7 +448,12 @@ input.backless {
   }
 }
 @media screen and (max-width:860px) {
-  .control-group {
+  .control-group, .contain {
     float:none;
+  }
+  .add { overflow:hidden;}
+  .view .half {
+    float: none;
+    width: auto;
   }
 }
