@@ -93,7 +93,7 @@ $data = '';
 				<div class="control-group">
 					<label class="control-label">Style</label>
 					<div class="controls">
-						<select id="brewStyle" data-bind="options:options.styles, value:brewStyle"></select>
+						<select id="brewStyle" data-bind="options:options.styles, value:data.brewStyle"></select>
 						<p class="help-block">Pick a <a href="#">BJCP</a> style for comparison.</p>
 					</div>
 				</div>
