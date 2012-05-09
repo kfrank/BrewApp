@@ -94,7 +94,7 @@ mysql_select_db(brews);
 <div class="container">
 	<a class="brew new" href="edit.php">
 		<figure>
-			<!--<img src="_/img/beers/new.jpg" alt="brew name">-->
+			<img src="_/img/new-beer.png" alt="brew name">
 		</figure>
 		<figcaption>
 			<h2>Add A Brew</h2>
@@ -106,6 +106,9 @@ mysql_select_db(brews);
 	<ul class="brew-list" data-bind="foreach:brews">
 		<li class="brew">
 			<figure>
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<path d="M3 12 L8 70 Q8 72 22 73 Q36 72 36 70 L43 12 Z" style="fill:#972555;"></path>
+				</svg>
 				<img src="_/img/beer-home.png">
 			</figure>
 			<figcaption>

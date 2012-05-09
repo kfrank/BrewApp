@@ -244,18 +244,28 @@ ul.brew-list {
 .brew figure,
 .views #general figure {
   margin: 0;
-  line-height: 0;
   float: left;
   width: 100px;
-  min-width: 50px;
+  margin: 0 20px;
+  position: relative;
 }
 .brew figure img,
 .views #general figure img {
-  margin-left: 23px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+.brew figure svg,
+.views #general figure svg {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 .brew figcaption,
 .views #general figcaption {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 125px;
   float: left;
 }
 .brew figcaption h2,

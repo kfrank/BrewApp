@@ -212,17 +212,26 @@ ul.brew-list {
 
   figure {
   	margin: 0;
-  	line-height: 0;
   	float: left;
   	width: 100px;
-    min-width: 50px;
+    margin: 0 20px;
+    position: relative;
 
     img {
-      margin-left: 23px;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+    svg {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
     }
   }
   figcaption {
-  	margin: 0 0 0 20px;
+  	margin: 0 0 0 125px;
   	float: left;
 
   	h2 {
