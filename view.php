@@ -73,6 +73,7 @@ $data = '';
 	}
 	?>
 	</script>
+	<script type="text/javascript" src="_/js/d3.v2.js"></script>
 </head>
 
 <body>
@@ -119,37 +120,51 @@ $data = '';
 	</section><!-- /general -->
 	
 	<section id="grains" >
+		<h2>Grains</h2>
+		<script type="text/javascript">
+
+			var data1 = [8, 3, 3], // weight of the grains
+			    data = data1;
+
+			var w = 300,
+			    h = 300,
+			    r = Math.min(w, h) / 2,
+			    color = d3.scale.category20c(),
+			    donut = d3.layout.pie().sort(null),
+			    arc = d3.svg.arc().innerRadius(r - 80).outerRadius(r - 20);
+
+			var svg = d3.select("section#grains").append("svg:svg")
+			    .attr("width", w)
+			    .attr("height", h)
+			  .append("svg:g")
+			    .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+
+			var arcs = svg.selectAll("path")
+			    .data(donut(data))
+			  .enter().append("svg:path")
+			    .attr("fill", function(d, i) { return color(i); })
+			    .attr("d", arc);
+
+    	</script>
 		<div class="contain" data-bind="foreach:data.grains">
-			<div class="row panel">
+			<div class="row">
 				<div class="control-group">
 					<div class="controls">
 						<span data-bind="text:type"></span>
 					</div>
 				</div>
-				<!--<div class="control-group">
-					<label class="control-label">Time</label>
-					<div class="controls">
-						<input type="text" value="${type}">
-						<p class="help-block">in minutes</p>
-					</div>
-				</div>-->
 				<div class="control-group">
 					<div class="controls">
 						<span data-bind="text:weight"></span> lbs
 					</div>
 				</div>
-				<!--<div class="control-group">
-					<label class="control-label">Color</label>
-					<div class="controls">
-						<input type="text" value="${color}">
-					</div>
-				</div>-->
 			</div><!-- /panel -->
 		</div>
 		
 	</section><!-- /grains -->
 	
 	<section id="hops">
+		<h2>Hops</h2>
 		<div class="contain">
 			<div class="row panel" data-bind="foreach:data.hops">
 				<div class="control-group">
@@ -180,6 +195,7 @@ $data = '';
 	</section><!-- /hops -->
 	
 	<section id="yeast">
+		<h2>Yeast</h2>
 		<div class="contain" data-bind="foreach:data.yeasts">
 		<div class="row panel">
 			<div class="control-group">
