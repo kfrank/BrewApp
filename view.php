@@ -125,7 +125,7 @@ $data = '';
 	<div class="half">
 	<section id="grains" >
 		<h2>Grains</h2>
-		<div id="grains-chart" style="height:250px;width:200px;"></div>
+		<div id="grains-chart"></div>
 		<div class="contain" data-bind="foreach:data.grains">
 				<h2><span data-bind="text:type"></span></h2>
 				<h3><span data-bind="text:weight"></span> lbs</h3>
