@@ -121,17 +121,20 @@ $data = '';
 					<h2>ABV</h2>
 				</div>-->
 	</section><!-- /general -->
-	
+<div class="full">
+	<div class="half">
 	<section id="grains" >
 		<h2>Grains</h2>
-		<div id="grains-chart" style="height:250px;width:200px;"></div>
+		<div id="grains-chart"></div>
 		<div class="contain" data-bind="foreach:data.grains">
 				<h2><span data-bind="text:type"></span></h2>
 				<h3><span data-bind="text:weight"></span> lbs</h3>
 		</div>
 		
 	</section><!-- /grains -->
+	</div>
 	
+	<div class="half">
 	<section id="hops">
 		<h2>Hops</h2>
 		<div class="contain">
@@ -166,7 +169,8 @@ $data = '';
 	</div><!-- /panel -->
 		</div>
 	</section><!-- /yeast -->
-	
+	</div>
+</div><!-- /full -->
 	<ul class="actions">
 		<li><a href="edit.php?id=<?php echo $id; ?>">Edit</a></li>
 		<li><a href="index.php">Done</a></li>
