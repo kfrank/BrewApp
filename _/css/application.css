@@ -221,14 +221,14 @@ ul.brew-list {
 .brew:hover,
 .views #general:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-.brew:hover img,
-.views #general:hover img {
-  border: 1px solid #fc7537;
+  /*img {
+      border: 1px solid #fc7537;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+    }*/
+
 }
 .brew:nth-child(even),
 .views #general:nth-child(even) {
@@ -246,13 +246,12 @@ ul.brew-list {
   margin: 0;
   line-height: 0;
   float: left;
-  width: 10%;
+  width: 100px;
   min-width: 50px;
 }
-.brew img,
-.views #general img {
-  max-width: 100%;
-  border-radius: 4px;
+.brew figure img,
+.views #general figure img {
+  margin-left: 23px;
 }
 .brew figcaption,
 .views #general figcaption {
