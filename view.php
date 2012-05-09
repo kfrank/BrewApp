@@ -73,7 +73,6 @@ $data = '';
 	}
 	?>
 	</script>
-	<script type="text/javascript" src="_/js/d3.v2.js"></script>
 </head>
 
 <body class="view">
@@ -125,32 +124,7 @@ $data = '';
 	
 	<section id="grains" >
 		<h2>Grains</h2>
-		<script type="text/javascript">
-
-			var data1 = [8, 3, 3], // weight of the grains
-			    data = data1;
-
-			var w = 300,
-			    h = 300,
-			    r = Math.min(w, h) / 2,
-			    color = d3.scale.category20c(),
-			    donut = d3.layout.pie().sort(null),
-			    arc = d3.svg.arc().innerRadius(r - 80).outerRadius(r - 20);
-
-			var svg = d3.select("section#grains").append("svg:svg")
-			    .attr("width", w)
-			    .attr("height", h)
-			    .attr('class', 'grainsdonut')
-			  .append("svg:g")
-			    .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
-
-			var arcs = svg.selectAll("path")
-			    .data(donut(data))
-			  .enter().append("svg:path")
-			    .attr("fill", function(d, i) { return color(i); })
-			    .attr("d", arc);
-
-    	</script>
+		<div id="grains-chart" style="height:250px;width:200px;"></div>
 		<div class="contain" data-bind="foreach:data.grains">
 				<h2><span data-bind="text:type"></span></h2>
 				<h3><span data-bind="text:weight"></span> lbs</h3>
@@ -203,8 +177,10 @@ $data = '';
 
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="_/js/highcharts.js"></script>
     <script src="_/js/knockout-2.0.0.js"></script>
     <script src="_/js/brew.js"></script>
+	<script src="_/js/brew-vis.js"></script>
 </body>
 
 </html>
