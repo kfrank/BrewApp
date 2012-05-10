@@ -79,91 +79,91 @@ $(function() {
 			'All-Grain'
 		],
 		grains: [
-			{ name: 'Belgian Aromatic Malt', color: '' },
-			{ name: 'Belgian Biscuit Malt', color: '' },
-			{ name: 'Belgian Caramel Pils', color: '' },
-			{ name: 'Belgian Caramunich', color: '' },
-			{ name: 'Belgian Caravienne', color: '' },
-			{ name: 'Belgian Debittered Black Malt', color: '' },
-			{ name: 'Belgian Pale Ale', color: '' },
-			{ name: 'Belgian Special B', color: '' },
-			{ name: 'Breiss Blackprinz Malt', color: '' },
-			{ name: 'Briess Ashburne Mild Ale Malt', color: '' },
-			{ name: 'Briess Bonlander Munich Malt', color: '' },
-			{ name: 'Briess Caramel 10L', color: '' },
-			{ name: 'Briess Caramel 120L', color: '' },
-			{ name: 'Briess Caramel 20L', color: '' },
-			{ name: 'Briess Caramel 40L', color: '' },
-			{ name: 'Briess Caramel 60L', color: '' },
-			{ name: 'Briess Caramel 80L', color: '' },
-			{ name: 'Briess Caramel 90L', color: '' },
-			{ name: 'Briess Carapils', color: '' },
-			{ name: 'Briess Cherrywood Smoked Malt', color: '' },
-			{ name: 'Briess Midnight Wheat Malt', color: '' },
-			{ name: 'Briess Organic 2-Row', color: '' },
-			{ name: 'Briess Organic Chocolate', color: '' },
-			{ name: 'Briess Organic Munich', color: '' },
-			{ name: 'Briess Special Roast', color: '' },
-			{ name: 'Briess Victory', color: '' },
-			{ name: 'British Golden Promise', color: '' },
-			{ name: 'British Peated Malt', color: '' },
-			{ name: 'Crisp Amber Malt', color: '' },
-			{ name: 'English Black Malt', color: '' },
-			{ name: 'English Brown Malt', color: '' },
-			{ name: 'English Chocolate Malt', color: '' },
-			{ name: 'English Dark Crystal', color: '' },
-			{ name: 'English Extra Dark Crystal', color: '' },
-			{ name: 'English Maris Otter', color: '' },
-			{ name: 'English Medium Crystal', color: '' },
-			{ name: 'English Roasted Barley', color: '' },
-			{ name: 'Fawcett Oat Malt', color: '' },
-			{ name: 'Fawcett Pale Chocolate', color: '' },
-			{ name: 'Flaked Barley', color: '' },
-			{ name: 'Flaked Maize', color: '' },
-			{ name: 'Flaked Oats', color: '' },
-			{ name: 'Flaked Rye', color: '' },
-			{ name: 'Flaked Wheat', color: '' },
-			{ name: 'Francobelges Kiln Coffee', color: '' },
-			{ name: 'Gambrinus ESB Pale Malt', color: '' },
-			{ name: 'Gambrinus Honey Malt', color: '' },
-			{ name: 'German Dark Munich', color: '' },
-			{ name: 'German Kolsch Malt', color: '' },
-			{ name: 'German Munich', color: '' },
-			{ name: 'German Pilsner', color: '' },
-			{ name: 'German Vienna Malt', color: '' },
-			{ name: 'Rahr 2-row pale', color: '' },
-			{ name: 'Rahr 6-row pale', color: '' },
-			{ name: 'Rahr Pale Ale Malt', color: '' },
-			{ name: 'Rahr Premium Pilsner', color: '' },
-			{ name: 'Rahr White Wheat Malt', color: '' },
-			{ name: 'Simpsons CaraMalt', color: '' },
-			{ name: 'Simpsons Golden Naked Oats', color: '' },
-			{ name: 'Torrified Wheat', color: '' },
-			{ name: 'Warminster Floor-Malted Maris Otter', color: '' },
-			{ name: 'Weyermann® Abbey Malt', color: '' },
-			{ name: 'Weyermann® Acidulated', color: '' },
-			{ name: 'Weyermann® Bohemian Pilsner', color: '' },
-			{ name: 'Weyermann® CaraAmber®', color: '' },
-			{ name: 'Weyermann® CaraAroma®', color: '' },
-			{ name: 'Weyermann® Carafoam®', color: '' },
-			{ name: 'Weyermann® Carahell®', color: '' },
-			{ name: 'Weyermann® Caramunich® I', color: '' },
-			{ name: 'Weyermann® Caramunich® II', color: '' },
-			{ name: 'Weyermann® Caramunich® III', color: '' },
-			{ name: 'Weyermann® CaraRed®', color: '' },
-			{ name: 'Weyermann® Carawheat®', color: '' },
-			{ name: 'Weyermann® Chocolate Rye Malt', color: '' },
-			{ name: 'Weyermann® Chocolate Wheat', color: '' },
-			{ name: 'Weyermann® Dehusked Carafa® I', color: '' },
-			{ name: 'Weyermann® Dehusked Carafa® II', color: '' },
-			{ name: 'Weyermann® Dehusked Carafa® III', color: '' },
-			{ name: 'Weyermann® Floor Malted Bohemian Dark Malt', color: '' },
-			{ name: 'Weyermann® Floor Malted Bohemian Pale Wheat', color: '' },
-			{ name: 'Weyermann® Melanoidin', color: '' },
-			{ name: 'Weyermann® Oak-Smoked Pale Wheat Malt', color: '' },
-			{ name: 'Weyermann® Pale Wheat', color: '' },
-			{ name: 'Weyermann® Rye Malt', color: '' },
-			{ name: 'Weyermann® Smoked Malt', color: '' }
+			{ name: 'Belgian Aromatic Malt', color: '#712300' },
+			{ name: 'Belgian Biscuit Malt', color: '#bb5224' },
+			{ name: 'Belgian Caramel Pils', color: '#db972c' },
+			{ name: 'Belgian Caramunich', color: '#ffb94b' },
+			{ name: 'Belgian Caravienne', color: '#f6d564' },
+			{ name: 'Belgian Debittered Black Malt', color: '#db972c' },
+			{ name: 'Belgian Pale Ale', color: '#712300' },
+			{ name: 'Belgian Special B', color: '#bb5224' },
+			{ name: 'Breiss Blackprinz Malt', color: '#ffb94b' },
+			{ name: 'Briess Ashburne Mild Ale Malt', color: '#f6d564' },
+			{ name: 'Briess Bonlander Munich Malt', color: '#2d1a05' },
+			{ name: 'Briess Caramel 10L', color: '#bb5224' },
+			{ name: 'Briess Caramel 120L', color: '#2d1a05' },
+			{ name: 'Briess Caramel 20L', color: '#bb5224' },
+			{ name: 'Briess Caramel 40L', color: '#712300' },
+			{ name: 'Briess Caramel 60L', color: '#db972c' },
+			{ name: 'Briess Caramel 80L', color: '#ffb94b' },
+			{ name: 'Briess Caramel 90L', color: '#f6d564' },
+			{ name: 'Briess Carapils', color: '#2d1a05' },
+			{ name: 'Briess Cherrywood Smoked Malt', color: '#bb5224' },
+			{ name: 'Briess Midnight Wheat Malt', color: '#db972c' },
+			{ name: 'Briess Organic 2-Row', color: '#bb5224' },
+			{ name: 'Briess Organic Chocolate', color: '#712300' },
+			{ name: 'Briess Organic Munich', color: '#ffb94b' },
+			{ name: 'Briess Special Roast', color: '#f6d564' },
+			{ name: 'Briess Victory', color: '#2d1a05' },
+			{ name: 'British Golden Promise', color: '#db972c' },
+			{ name: 'British Peated Malt', color: '#712300' },
+			{ name: 'Crisp Amber Malt', color: '#bb5224' },
+			{ name: 'English Black Malt', color: '#ffb94b' },
+			{ name: 'English Brown Malt', color: '#2d1a05' },
+			{ name: 'English Chocolate Malt', color: '#db972c' },
+			{ name: 'English Dark Crystal', color: '#712300' },
+			{ name: 'English Extra Dark Crystal', color: '#bb5224' },
+			{ name: 'English Maris Otter', color: '#ffb94b' },
+			{ name: 'English Medium Crystal', color: '#f6d564' },
+			{ name: 'English Roasted Barley', color: '#2d1a05' },
+			{ name: 'Fawcett Oat Malt', color: '#bb5224' },
+			{ name: 'Fawcett Pale Chocolate', color: '#db972c' },
+			{ name: 'Flaked Barley', color: '#712300' },
+			{ name: 'Flaked Maize', color: '#bb5224' },
+			{ name: 'Flaked Oats', color: '#ffb94b' },
+			{ name: 'Flaked Rye', color: '#f6d564' },
+			{ name: 'Flaked Wheat', color: '#2d1a05' },
+			{ name: 'Francobelges Kiln Coffee', color: '#f6d564' },
+			{ name: 'Gambrinus ESB Pale Malt', color: '#db972c' },
+			{ name: 'Gambrinus Honey Malt', color: '#712300' },
+			{ name: 'German Dark Munich', color: '#bb5224' },
+			{ name: 'German Kolsch Malt', color: '#ffb94b' },
+			{ name: 'German Munich', color: '#2d1a05' },
+			{ name: 'German Pilsner', color: '#db972c' },
+			{ name: 'German Vienna Malt', color: '#712300' },
+			{ name: 'Rahr 2-row pale', color: '#bb5224' },
+			{ name: 'Rahr 6-row pale', color: '#ffb94b' },
+			{ name: 'Rahr Pale Ale Malt', color: '#f6d564' },
+			{ name: 'Rahr Premium Pilsner', color: '#db972c' },
+			{ name: 'Rahr White Wheat Malt', color: '#712300' },
+			{ name: 'Simpsons CaraMalt', color: '#bb5224' },
+			{ name: 'Simpsons Golden Naked Oats', color: '#ffb94b' },
+			{ name: 'Torrified Wheat', color: '#2d1a05' },
+			{ name: 'Warminster Floor-Malted Maris Otter', color: '#bb5224' },
+			{ name: 'Weyermann® Abbey Malt', color: '#f6d564' },
+			{ name: 'Weyermann® Acidulated', color: '#db972c' },
+			{ name: 'Weyermann® Bohemian Pilsner', color: '#712300' },
+			{ name: 'Weyermann® CaraAmber®', color: '#bb5224' },
+			{ name: 'Weyermann® CaraAroma®', color: '#ffb94b' },
+			{ name: 'Weyermann® Carafoam®', color: '#f6d564' },
+			{ name: 'Weyermann® Carahell®', color: '#db972c' },
+			{ name: 'Weyermann® Caramunich® I', color: '#712300' },
+			{ name: 'Weyermann® Caramunich® II', color: '#bb5224' },
+			{ name: 'Weyermann® Caramunich® III', color: '#ffb94b' },
+			{ name: 'Weyermann® CaraRed®', color: '#f6d564' },
+			{ name: 'Weyermann® Carawheat®', color: '#db972c' },
+			{ name: 'Weyermann® Chocolate Rye Malt', color: '#bb5224' },
+			{ name: 'Weyermann® Chocolate Wheat', color: '#712300' },
+			{ name: 'Weyermann® Dehusked Carafa® I', color: '#ffb94b' },
+			{ name: 'Weyermann® Dehusked Carafa® II', color: '#f6d564' },
+			{ name: 'Weyermann® Dehusked Carafa® III', color: '#db972c' },
+			{ name: 'Weyermann® Floor Malted Bohemian Dark Malt', color: '#712300' },
+			{ name: 'Weyermann® Floor Malted Bohemian Pale Wheat', color: '#bb5224' },
+			{ name: 'Weyermann® Melanoidin', color: '#ffb94b' },
+			{ name: 'Weyermann® Oak-Smoked Pale Wheat Malt', color: '#f6d564' },
+			{ name: 'Weyermann® Pale Wheat', color: '#db972c' },
+			{ name: 'Weyermann® Rye Malt', color: '#bb5224' },
+			{ name: 'Weyermann® Smoked Malt', color: '#712300' }
 		],
 		hops: [
 			{ name: 'Ahtanum', alpha: '80' },
@@ -304,6 +304,43 @@ $(function() {
 		]
 	};
 	
+	// Creates an averaged color from an array of hex color values.
+	function averageColor(colors) {
+		var r = [],
+			g = [],
+			b = [],
+			i;
+		
+		// Totals up all numbers in an array.
+		function sum(arry) {
+			var total = 0;
+			for (i in arry) total += arry[i];
+			return total;
+		}
+		// Creates a two-digit hexidecimal string component.
+		function hex(val) {
+			val = val.toString(16);
+			if (val.length < 2) val = '0'+val;
+			return val;
+		}
+		
+		// Collect all individual R/G/B component values.
+		for (i in colors) {
+			i = colors[i];
+			r.push( parseInt(i.substr(1, 2), 16) );
+			g.push( parseInt(i.substr(3, 2), 16) );
+			b.push( parseInt(i.substr(5, 2), 16) );
+		}
+		
+		// Get average of R/G/B components.
+		r = Math.round(sum(r) / r.length);
+		g = Math.round(sum(g) / g.length);
+		b = Math.round(sum(b) / b.length);
+		
+		// Return mean color.
+		return '#' + hex(r) + hex(g) + hex(b);
+	}
+	
 	// GRAIN
 	var Grain = function() {};
 	Grain.prototype = {
@@ -373,9 +410,22 @@ $(function() {
 			self.save();
 		};
 		self.save = function() {
+			var colors = [],
+				i;
+			
+			$.each(data.grains(), function(index, grain) {
+				for (i in opts.grains) {
+					if (opts.grains[i].name === grain.type) {
+						colors.push( opts.grains[i].color );
+						break;
+					}
+				}
+			});
+			
 			$('#brew-id').val( data.id );
 			$('#brew-name').val( data.brewName() );
 			$('#brew-data').val( ko.toJSON(data) );
+			$('#brew-color').val( averageColor(colors) );
 			$('#brew-form').submit();
 		};
 	};
