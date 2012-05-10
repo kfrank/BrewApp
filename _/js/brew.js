@@ -346,7 +346,7 @@ $(function() {
 	Grain.prototype = {
 		weight: 3,
 		type: opts.grains[0].name,
-		color: 1.5
+		color: opts.grains[0].color
 	};
 	
 	// HOPS
@@ -413,10 +413,12 @@ $(function() {
 			var colors = [],
 				i;
 			
+			// Update and collect all grain colors.
 			$.each(data.grains(), function(index, grain) {
 				for (i in opts.grains) {
-					if (opts.grains[i].name === grain.type) {
-						colors.push( opts.grains[i].color );
+					if (opts.grains.hasOwnProperty(i) && opts.grains[i].name === grain.type) {
+						grain.color = opts.grains[i].color;
+						colors.push( grain.color );
 						break;
 					}
 				}
