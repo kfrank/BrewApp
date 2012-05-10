@@ -526,4 +526,14 @@ a.brew.new figure img {
     float: none;
     width: auto;
   }
+  section#grains button.remove,
+  section#hops button.remove,
+  section#yeast button.remove {
+    margin-bottom: 10px;
+  }
+  section#grains .contain,
+  section#hops .contain,
+  section#yeast .contain {
+    margin-top: 60px;
+  }
 }
