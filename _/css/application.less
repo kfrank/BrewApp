@@ -214,24 +214,25 @@ ul.brew-list {
   	margin: 0;
   	float: left;
   	width: 100px;
-    margin: 0 20px;
+    height: 100px;
+    margin: 0 20px 0 0;
     position: relative;
 
     img {
       position: absolute;
       z-index: 2;
       top: 0;
-      left: 0;
+      left: 27px;
     }
     svg {
       position: absolute;
       z-index: 1;
       top: 0;
-      left: 0;
+      left: 27px;
     }
   }
+
   figcaption {
-  	margin: 0 0 0 125px;
   	float: left;
 
   	h2 {
@@ -452,6 +453,14 @@ input.backless {
 #grains-chart {
   width: 100%;
 }
+
+  a.brew.new figure {
+    img {
+      position: relative;
+      left: 0;
+      border-radius: 4px;
+    }
+  }
 
 @media screen and (min-width: 1px) and (max-width:400px) {
   select {max-width: 320px;}
