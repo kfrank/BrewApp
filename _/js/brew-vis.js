@@ -10,6 +10,7 @@ $(function() {
 	if (brew) {
 		
 		var data = [],
+			colors = [],
 			list = brew.data.grains(),
 			chart,
 			i;
@@ -17,6 +18,7 @@ $(function() {
 		for (i in list) {
 			if (list.hasOwnProperty(i)) {
 				data.push( [list[i].type, parseInt(list[i].weight)] );
+				colors.push( list[i].color );
 			}
 		}
 		
@@ -32,6 +34,7 @@ $(function() {
 			credits: {
 				enabled: false
 			},
+			colors: colors,
 			legend: {
 				enabled: false
 			},
